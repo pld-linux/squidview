@@ -6,6 +6,7 @@ Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://www.rillion.net/squidview/%{name}-%{version}.tar.gz
+# Source0-md5:	618ee8df3abdb2f4f83e5b00a72cf5dd
 Patch0:		squidview-pld.patch
 URL:		http://www.rillion.net/squidview/
 BuildRequires:	ncurses-devel
