@@ -9,6 +9,7 @@ Source0:	http://www.rillion.net/squidview/%{name}-%{version}.tar.gz
 # Source0-md5:	2b0ca16fc8d7874047fd54fe3a7321f8
 Patch0:		squidview-pld.patch
 URL:		http://www.rillion.net/squidview/
+BuildRequires:	libstdc++-devel
 BuildRequires:	ncurses-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
