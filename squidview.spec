@@ -1,13 +1,14 @@
 Summary:	A console program to nicely view squid's log
 Summary(pl):	Konsolowy program pozwalaj±cy ogl±daæ logi squida
 Name:		squidview
-Version:	0.51
+Version:	0.60
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://www.rillion.net/squidview/%{name}-%{version}.tar.gz
-# Source0-md5:	2b0ca16fc8d7874047fd54fe3a7321f8
-Patch0:		squidview-pld.patch
+# Source0-md5:	ad0628a8dcbe9a64194bd94df5dcf9ae
+Patch0:		%{name}-pld.patch
+Patch1:		%{name}-curses,howto-dest.patch
 URL:		http://www.rillion.net/squidview/
 BuildRequires:	libstdc++-devel
 BuildRequires:	ncurses-devel
@@ -26,8 +27,15 @@ i trafienia cache-a.
 
 %prep
 %setup -q
+%patch0 -p1
+%patch1 -p1
 
 %build
+%{__aclocal}
+%{__autoconf}
+%{__autoheader}
+%{__automake}
+%configure
 %{__make} CXXFLAGS="-I%{_includedir}/ncurses"
 
 %install
@@ -40,5 +48,5 @@ rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
-%doc README users words
+%doc BUGS ChangeLog HOWTO README users words
 %attr(754,root,root) %{_bindir}/*
