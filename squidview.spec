@@ -10,6 +10,8 @@ Source0:	http://www.rillion.net/squidview/%{name}-%{version}.tar.gz
 Patch0:		%{name}-pld.patch
 Patch1:		%{name}-curses,howto-dest.patch
 URL:		http://www.rillion.net/squidview/
+BuildRequires:	autoconf
+BuildRequires:	automake
 BuildRequires:	libstdc++-devel
 BuildRequires:	ncurses-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -36,12 +38,15 @@ i trafienia cache-a.
 %{__autoheader}
 %{__automake}
 %configure
-%{__make} CXXFLAGS="-I%{_includedir}/ncurses"
+%{__make} \
+	CXXFLAGS="-I/usr/include/ncurses"
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install DESTDIR=$RPM_BUILD_ROOT PREFIX="%{_prefix}"
+%{__make} install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	PREFIX="%{_prefix}"
 
 %clean
 rm -rf $RPM_BUILD_ROOT
