@@ -24,7 +24,6 @@ i trafienia cache-a.
 
 %prep
 %setup -q
-%patch0 -p1
 
 %build
 %{__make} CXXFLAGS="-I%{_includedir}/ncurses"
