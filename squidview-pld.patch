@@ -6,7 +6,7 @@ diff -Nur old/squidview.cpp new/squidview.cpp
  #include <config.h>
  #else
 -#  define SHAREDIR "/usr/local/share/squidview"
-+#  define SHAREDIR "/usr/share/doc/squidview-0.60/"
++#  define SHAREDIR "/usr/share/doc/squidview-0.69/"
  #  define PACKAGE "squidview"
  #  define VERSION "0.6"
  #endif
@@ -18,27 +18,18 @@ diff -Nur old/squidview.cpp new/squidview.cpp
    IOstring ("sCurrentReport", sCurrentReport);
    IOstring ("sCurrentEmail", sCurrentEmail);
    IOint ("iSizeHitGrade", iSizeHitGrade);
-@@ -3950,7 +3951,7 @@
+@@ -3960,7 +3961,7 @@
      }
    }
    else
--    RunProgram (sViewer + " " + sHowToLink, 1);
-+    RunProgram (sZipViewer + " " + sHowToLink, 1);
+-    RunProgram (sViewer + " " + sHowToLink);
++    RunProgram (sZipViewer + " " + sHowToLink);
  }
  
  
 diff -Nur old/squidview.h new/squidview.h
 --- old/squidview.h	2003-11-21 03:25:58.000000000 +0000
 +++ new/squidview.h	2003-11-28 20:55:09.000000000 +0000
-@@ -63,7 +63,7 @@
- string sHomeDir;
- const char szSquidHome[] = ".squidview";
- string sPathToFiles;
--const char szMainLog[] = "/usr/local/squid/var/logs/access.log";
-+const char szMainLog[] = "/var/log/squid/access.log";
- 
- const char szLog1[] = "log1";
- const char szLog2[] = "log2";
 @@ -76,12 +76,13 @@
  const char szWordFile[] = "words";         // search words 
  const char szUsersFile[] = "users";        // list of real names 
