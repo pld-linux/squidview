@@ -6,7 +6,7 @@ Release:	2
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://www.rillion.net/squidview/%{name}-%{version}.tar.gz
-Patch0:		squidview-loglocation.patch
+Patch0:		squidview-pld.patch
 URL:		http://www.rillion.net/squidview/
 BuildRequires:	ncurses-devel
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)

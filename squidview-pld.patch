@@ -1,0 +1,49 @@
+diff -urN squidview-0.30/squidview.cpp squidview-my/squidview.cpp
+--- squidview-0.30/squidview.cpp	Sat Aug 17 07:10:25 2002
++++ squidview-my/squidview.cpp	Sun Nov  3 20:00:07 2002
+@@ -3263,6 +3263,7 @@
+   IOstring ("sRepFocus", sRepFocus);
+   IOstring ("sRepBDTuser", sRepBDTuser);
+   IOstring ("sViewer", sViewer);
++  IOstring ("sZipViewer", sZipViewer);
+   IOstring ("sCurrentReport", sCurrentReport);
+   IOstring ("sCurrentEmail", sCurrentEmail);
+   IOint ("iSizeHitGrade", iSizeHitGrade);
+@@ -3294,7 +3295,7 @@
+     }
+   }
+   else
+-    RunProgram (sViewer + " " + szReadme, 1);
++    RunProgram (sZipViewer + " " + szReadme, 1);
+ }
+ 
+ 
+diff -urN squidview-0.30/squidview.h squidview-my/squidview.h
+--- squidview-0.30/squidview.h	Sat Aug 17 07:10:25 2002
++++ squidview-my/squidview.h	Sun Nov  3 19:59:16 2002
+@@ -56,8 +56,8 @@
+ string sHomeDir;
+ const char szSquidHome[] = ".squidview";
+ string sPathToFiles;
+-const char szMainLog[] = "/usr/local/squid/var/logs/access.log";
+-const char szReadme[] = "/usr/share/doc/squidview/README";
++const char szMainLog[] = "var/log/squid/access.log";
++const char szReadme[] = "/usr/share/doc/squidview-0.30/README.gz";
+ 
+ const char szLog1[] = "log1";
+ const char szLog2[] = "log2";
+@@ -69,12 +69,13 @@
+ const char* pszCurrentName;
+ const char szWordFile[] = "words";         // search words 
+ const char szUsersFile[] = "users";        // list of real names 
+-const char szReadmeFile[] = "README";      // link name 
++const char szReadmeFile[] = "README.gz";      // link name 
+ 
+ string sLogFile1, sLogFile2, sLogFile3;
+ string sWordFile, sUsersFile, sSetFileName, sReadmeLink;
+ 
+ string sViewer = "less";
++string sZipViewer = "zless";
+ string sCurrentReport = "";
+ string sCurrentEmail = "";
+ const string sReportExt = ".txt";
