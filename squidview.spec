@@ -1,12 +1,12 @@
 Summary:	A console program to nicely view squid's log
 Summary(pl):	Konsolowy program pozwalaj±cy ogl±daæ logi squida
 Name:		squidview
-Version:	0.36
+Version:	0.50
 Release:	1
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://www.rillion.net/squidview/%{name}-%{version}.tar.gz
-# Source0-md5:	618ee8df3abdb2f4f83e5b00a72cf5dd
+# Source0-md5:	0f5d2f6cb1e4725744e093c4459f2b8c
 Patch0:		squidview-pld.patch
 URL:		http://www.rillion.net/squidview/
 BuildRequires:	ncurses-devel
