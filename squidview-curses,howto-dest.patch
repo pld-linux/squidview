@@ -1,0 +1,21 @@
+diff -Nur old/configure.in new/configure.in
+--- old/configure.in	2003-11-21 03:28:44.000000000 +0000
++++ new/configure.in	2003-11-28 22:30:27.000000000 +0000
+@@ -4,7 +4,7 @@
+ AC_PROG_CXX
+ AC_PROG_INSTALL
+ 
+-AC_CHECK_HEADERS(curses.h signal.h sys/time.h sys/types.h sys/stat.h \
++AC_CHECK_HEADERS(ncurses/curses.h signal.h sys/time.h sys/types.h sys/stat.h \
+  unistd.h fcntl.h time.h stdlib.h math.h,, \
+  AC_MSG_ERROR([header missing]))
+ AC_CHECK_LIB(ncurses, wgetch,,AC_MSG_ERROR([recent ncurses installed?]))
+@@ -16,7 +16,7 @@
+ 
+ sv1="$prefix"
+ test "x$prefix" = "xNONE" && prefix="$ac_default_prefix"
+-sv2=`eval echo $datadir/$PACKAGE`
++sv2=`eval echo $datadir/doc/$PACKAGE-$VERSION`
+ prefix="$sv1"
+ AC_DEFINE_UNQUOTED(SHAREDIR, "$sv2")
+ AC_OUTPUT(Makefile)
