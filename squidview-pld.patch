@@ -1,7 +1,16 @@
-diff -urN squidview-0.30/squidview.cpp squidview-my/squidview.cpp
---- squidview-0.30/squidview.cpp	Sat Aug 17 07:10:25 2002
-+++ squidview-my/squidview.cpp	Sun Nov  3 20:00:07 2002
-@@ -3263,6 +3263,7 @@
+diff -Nur old/squidview.cpp new/squidview.cpp
+--- old/squidview.cpp	2003-11-21 03:25:58.000000000 +0000
++++ new/squidview.cpp	2003-11-28 20:58:27.000000000 +0000
+@@ -41,7 +41,7 @@
+ #ifdef HAVE_CONFIG_H
+ #include <config.h>
+ #else
+-#  define SHAREDIR "/usr/local/share/squidview"
++#  define SHAREDIR "/usr/share/doc/squidview-0.60/"
+ #  define PACKAGE "squidview"
+ #  define VERSION "0.6"
+ #endif
+@@ -3910,6 +3910,7 @@
    IOstring ("sRepFocus", sRepFocus);
    IOstring ("sRepBDTuser", sRepBDTuser);
    IOstring ("sViewer", sViewer);
@@ -9,38 +18,36 @@ diff -urN squidview-0.30/squidview.cpp squidview-my/squidview.cpp
    IOstring ("sCurrentReport", sCurrentReport);
    IOstring ("sCurrentEmail", sCurrentEmail);
    IOint ("iSizeHitGrade", iSizeHitGrade);
-@@ -3294,7 +3295,7 @@
+@@ -3950,7 +3951,7 @@
      }
    }
    else
--    RunProgram (sViewer + " " + szReadme, 1);
-+    RunProgram (sZipViewer + " " + szReadme, 1);
+-    RunProgram (sViewer + " " + sHowToLink, 1);
++    RunProgram (sZipViewer + " " + sHowToLink, 1);
  }
  
  
-diff -urN squidview-0.30/squidview.h squidview-my/squidview.h
---- squidview-0.30/squidview.h	Sat Aug 17 07:10:25 2002
-+++ squidview-my/squidview.h	Sun Nov  3 19:59:16 2002
-@@ -56,8 +56,8 @@
+diff -Nur old/squidview.h new/squidview.h
+--- old/squidview.h	2003-11-21 03:25:58.000000000 +0000
++++ new/squidview.h	2003-11-28 20:55:09.000000000 +0000
+@@ -63,7 +63,7 @@
  string sHomeDir;
  const char szSquidHome[] = ".squidview";
  string sPathToFiles;
 -const char szMainLog[] = "/usr/local/squid/var/logs/access.log";
--const char szReadme[] = "/usr/share/doc/squidview/README";
-+const char szMainLog[] = "var/log/squid/access.log";
-+const char szReadme[] = "/usr/share/doc/squidview-0.30/README.gz";
++const char szMainLog[] = "/var/log/squid/access.log";
  
  const char szLog1[] = "log1";
  const char szLog2[] = "log2";
-@@ -69,12 +69,13 @@
- const char* pszCurrentName;
+@@ -76,12 +76,13 @@
  const char szWordFile[] = "words";         // search words 
  const char szUsersFile[] = "users";        // list of real names 
--const char szReadmeFile[] = "README";      // link name 
-+const char szReadmeFile[] = "README.gz";      // link name 
+ const char szAliasesFile[] = "aliases";    // map IPs to user names
+-const char szHowToFile[] = "HOWTO";      // link name 
++const char szHowToFile[] = "HOWTO.gz";      // link name 
  
  string sLogFile1, sLogFile2, sLogFile3;
- string sWordFile, sUsersFile, sSetFileName, sReadmeLink;
+ string sWordFile, sUsersFile, sAliasesFile, sSetFileName, sHowToLink;
  
  string sViewer = "less";
 +string sZipViewer = "zless";
