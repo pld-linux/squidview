@@ -1,5 +1,5 @@
 Summary:	A console program to nicely view squid's log
-Summary(pl.UTF-8):   Konsolowy program pozwalający oglądać logi squida
+Summary(pl.UTF-8):	Konsolowy program pozwalający oglądać logi squida
 Name:		squidview
 Version:	0.69
 Release:	1
