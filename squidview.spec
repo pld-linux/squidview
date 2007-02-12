@@ -1,5 +1,5 @@
 Summary:	A console program to nicely view squid's log
-Summary(pl):	Konsolowy program pozwalaj±cy ogl±daæ logi squida
+Summary(pl.UTF-8):   Konsolowy program pozwalajÄ…cy oglÄ…daÄ‡ logi squida
 Name:		squidview
 Version:	0.69
 Release:	1
@@ -21,10 +21,10 @@ Squidview is an interactive console program which monitors squid logs
 and displays them in a nice fashion. It has searching and reporting
 functions, giving information like per user bandwidth and cache hits.
 
-%description -l pl
-Squidview jest interaktywnym konsolowym programem, który monitoruje
-logi squida i wy¶wietla je w przyjemny sposób. Ma funkcje szukania i
-raportowania, daj±c informacje takie jak przepustowo¶æ na u¿ytkownika
+%description -l pl.UTF-8
+Squidview jest interaktywnym konsolowym programem, ktÃ³ry monitoruje
+logi squida i wyÅ›wietla je w przyjemny sposÃ³b. Ma funkcje szukania i
+raportowania, dajÄ…c informacje takie jak przepustowoÅ›Ä‡ na uÅ¼ytkownika
 i trafienia cache-a.
 
 %prep
