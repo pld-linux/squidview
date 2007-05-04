@@ -30,7 +30,7 @@ diff -Nur old/squidview.cpp new/squidview.cpp
 diff -Nur old/squidview.h new/squidview.h
 --- old/squidview.h	2003-11-21 03:25:58.000000000 +0000
 +++ new/squidview.h	2003-11-28 20:55:09.000000000 +0000
-@@ -76,12 +76,13 @@
+@@ -80,7 +80,7 @@
  const char szWordFile[] = "words";         // search words 
  const char szUsersFile[] = "users";        // list of real names 
  const char szAliasesFile[] = "aliases";    // map IPs to user names
@@ -39,6 +39,8 @@ diff -Nur old/squidview.h new/squidview.h
  
  string sLogFile1, sLogFile2, sLogFile3;
  string sWordFile, sUsersFile, sAliasesFile, sSetFileName, sHowToLink;
+@@ -88,6 +88,7 @@
+ char const *pszReadingFile = 0;
  
  string sViewer = "less";
 +string sZipViewer = "zless";
