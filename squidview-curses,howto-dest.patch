@@ -10,12 +10,3 @@ diff -Nur old/configure.in new/configure.in
   unistd.h fcntl.h time.h stdlib.h math.h,, \
   AC_MSG_ERROR([header missing]))
  AC_CHECK_LIB(ncurses, wgetch,,AC_MSG_ERROR([recent ncurses installed?]))
-@@ -16,7 +16,7 @@
- 
- sv1="$prefix"
- test "x$prefix" = "xNONE" && prefix="$ac_default_prefix"
--sv2=`eval echo $datadir/$PACKAGE`
-+sv2=`eval echo $datadir/doc/$PACKAGE-$VERSION`
- prefix="$sv1"
- AC_DEFINE_UNQUOTED(SHAREDIR, "$sv2")
- AC_OUTPUT(Makefile)
