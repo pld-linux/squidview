@@ -22,8 +22,8 @@ diff -Nur old/squidview.cpp new/squidview.cpp
      }
    }
    else
--    RunProgram (sViewer + " " + sHowToLink);
-+    RunProgram (sZipViewer + " " + sHowToLink);
+-    RunProgramInConsole (sViewer + " " + sHowToLink);
++    RunProgramInConsole (sZipViewer + " " + sHowToLink);
  }
  
  

@@ -1,12 +1,20 @@
-diff -Nur old/configure.in new/configure.in
---- old/configure.in	2003-11-21 03:28:44.000000000 +0000
-+++ new/configure.in	2003-11-28 22:30:27.000000000 +0000
-@@ -4,7 +4,7 @@
+--- squidview-0.78/configure.in.orig	2011-01-20 03:22:46.000000000 +0100
++++ squidview-0.78/configure.in	2011-02-02 23:59:12.335738189 +0100
+@@ -5,7 +5,7 @@ if test "x$sv_curses" = xno; then
+   sv_pass="no"
+   AC_MSG_CHECKING([name is $sv_test])
+   LIBS="-l$sv_test"
+-  AC_LINK_IFELSE([AC_LANG_PROGRAM([#include <curses.h>], [initscr();])],
++  AC_LINK_IFELSE([AC_LANG_PROGRAM([#include <ncurses/curses.h>], [initscr();])],
+     [sv_pass="yes"])
+   AC_MSG_RESULT([$sv_pass])
+   test "$sv_pass" = yes && sv_curses=$sv_test
+@@ -19,7 +19,7 @@ AM_INIT_AUTOMAKE(squidview,0.78)
  AC_PROG_CXX
  AC_PROG_INSTALL
  
--AC_CHECK_HEADERS(curses.h signal.h sys/time.h sys/types.h sys/stat.h \
+-AC_CHECK_HEADERS(curses.h, signal.h sys/time.h sys/types.h sys/stat.h \
 +AC_CHECK_HEADERS(ncurses/curses.h signal.h sys/time.h sys/types.h sys/stat.h \
-  unistd.h fcntl.h time.h stdlib.h math.h,, \
+  unistd.h fcntl.h time.h stdlib.h math.h stdio.h,, \
   AC_MSG_ERROR([header missing]))
- AC_CHECK_LIB(ncurses, wgetch,,AC_MSG_ERROR([recent ncurses installed?]))
+ 
