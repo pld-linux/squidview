@@ -39,8 +39,7 @@ i trafienia cache-a.
 %{__automake}
 %configure
 %{__make} \
-	CXXFLAGS="-I/usr/include/ncurses" \
-	LIBS="-lncurses -ltinfo"
+	CXXFLAGS="-I/usr/include/ncurses"
 
 %install
 rm -rf $RPM_BUILD_ROOT
