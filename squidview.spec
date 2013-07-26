@@ -2,7 +2,7 @@ Summary:	A console program to nicely view squid's log
 Summary(pl.UTF-8):	Konsolowy program pozwalający oglądać logi squida
 Name:		squidview
 Version:	0.79
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		Applications/System
 Source0:	http://www.rillion.net/squidview/%{name}-%{version}.tar.gz
@@ -54,5 +54,5 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc BUGS ChangeLog HOWTO README users words aliases
-%attr(754,root,root) %{_bindir}/*
+%attr(755,root,root) %{_bindir}/squidview
 %{_mandir}/man1/*
