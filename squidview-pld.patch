@@ -6,7 +6,7 @@ diff -Nur old/squidview.cpp new/squidview.cpp
  #include <config.h>
  #else
 -#  define SHAREDIR "/usr/local/share/squidview"
-+#  define SHAREDIR "/usr/share/doc/squidview-0.69/"
++#  define SHAREDIR "/usr/share/doc/squidview-0.80/"
  #  define PACKAGE "squidview"
  #  define VERSION "0.6"
  #endif
